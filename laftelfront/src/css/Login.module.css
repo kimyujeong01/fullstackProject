@@ -1,0 +1,24 @@
+.loginMainContainer {
+
+    overflow: hidden;
+    position: relative;
+    width: 100%; /* 혹은 전체 화면을 차지하게 조정 */
+    height: 100vh; /* 뷰포트 높이에 맞춤 */
+}
+
+.backgroundComponent {
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; /* 배경이 되도록 z-index 설정 */
+    /* ... 추가 배경 스타일링 ... */
+}
+
+.loginComponent {
+    position: relative;
+    z-index: 10; /* Login 컴포넌트가 위로 오도록 z-index 설정 */
+    /* ... 로그인 컴포넌트 중앙 정렬 등의 스타일링 ... */
+}

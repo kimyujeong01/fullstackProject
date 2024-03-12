@@ -1,0 +1,11 @@
+/* 이미지를 담는 컨테이너에 적용할 스타일 */
+.image-container {
+    display: flex;
+    overflow-x: auto;
+}
+
+/* 각 이미지 카드에 적용할 스타일 */
+.image-card {
+    flex-shrink: 0;
+    margin-right: 10px; /* 이미지들 사이 간격 */
+}

@@ -1,0 +1,27 @@
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto; /* 여기에 추가 */
+}
+/* 메뉴가 열리면 right 값을 0으로 설정 */
+.side-menu.open {
+    right: 0;
+}
+
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 500; /* 메뉴 뒤여야 하므로 z-index는 .side-menu보다 낮습니다. */
+}

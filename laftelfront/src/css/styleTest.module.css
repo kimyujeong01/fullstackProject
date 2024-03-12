@@ -1,0 +1,106 @@
+.searchContainer {
+    position: relative; /* 이것이 중요합니다 */
+}
+
+.autoCompleteList {
+    color: black;
+    position: absolute;
+    top: 100%; /* 인풋 바로 아래에 위치 */
+    left: 0;
+    right: 0;
+    width: 100%; /* 검색창과 동일한 너비로 설정 */
+    z-index: 1000; /* 다른 요소들 위에 보이도록 함 */
+    background-color: #ffffff; /* 배경색 지정 */
+
+    border-top: none; /* 위쪽 테두리는 제거 */
+    list-style: none; /* 기본 리스트 스타일 제거 */
+    padding: 0;
+    margin: 0;
+}
+
+.autoCompleteItem {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.autoCompleteItem:hover {
+    background-color: #f8f8f8; /* 마우스 호버시 배경색 변경 */
+}
+
+
+.HeaderContainer {
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 999;
+    transition: background-color 0.2s ease-out;
+    box-shadow: none;
+    text-decoration-line: none;
+
+
+}
+
+.change_header {
+    text-decoration-line: none;
+
+    position: fixed;
+    color: black;
+
+    background-color: white;
+    z-index: 999;
+    font-weight: 400;
+    width: 100%;
+    height: 60px;
+    top: 0;
+    border-bottom: 1px solid #EBEBEB;
+}
+
+
+.header_color { color: white;     text-decoration-line: none;}
+.change_color { color: black;     text-decoration-line: none;}
+
+.common-link {
+    color: blue;
+    text-decoration: none; /* 밑줄 제거 */
+}
+@media only screen and (max-width: 768px) {
+
+    .HeaderContainer {
+        color: white;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 5vh;
+        z-index: 9999;
+        transition: background-color 0.2s ease-out;
+        box-shadow: none;
+        text-decoration-line: none;
+
+
+    }
+
+    .change_header {
+        text-decoration-line: none;
+        position: fixed;
+        top: 0;
+        color: black;
+
+        background-color: white;
+        z-index: 9999;
+        font-weight: 400;
+
+        height: 5vh;
+        top: 0;
+        border-bottom: 1px solid #EBEBEB;
+    }
+
+
+    .header_color { color: white;     text-decoration-line: none;}
+    .change_color { color: black;     text-decoration-line: none;}
+
+    .common-link {
+        font-size: 16px;
+    }
+}

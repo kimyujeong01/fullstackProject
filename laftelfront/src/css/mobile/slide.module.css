@@ -1,0 +1,23 @@
+@media only screen and (max-width: 768px) {
+    .slider-container {
+        /* 컨테이너 사이즈 조정 */
+    }
+    .slide-image {
+        height: 500px; /* 슬라이드 이미지 높이 조정 */
+    }
+    .slick-next, .slick-prev {
+        width: 30px; /* 화살표 버튼 사이즈 조정 */
+        height: 30px;
+    }
+
+    .container {
+        position: relative;
+    }
+
+    .overlay-image {
+
+        position: absolute;
+        top:10px; /* 예시: 10px */
+        left: 10px; /* 예시: 10px */
+    }
+}

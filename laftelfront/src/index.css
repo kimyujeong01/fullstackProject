@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  font-family: "Mobile";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: "Mobile";
+  font-weight: normal;
+  src: url("./fonts/ONE Mobile POP.ttf") format("truetype");
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}

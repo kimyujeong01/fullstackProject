@@ -1,0 +1,40 @@
+.arrow{
+    border-top-right-radius: 2px;
+    opacity: 75%;
+    position: absolute;
+    top: 46%;
+    transform: translateY(-50%);
+    background-color: slateblue;
+    font-size: 0;
+    width: 50px;
+    height: 92%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    z-index: 50;
+    right: 10px;
+
+}
+
+.arrowLe{
+    border-top-left-radius: 2px;
+    opacity: 75%;
+    position: absolute;
+    top: 46%;
+    transform: translateY(-50%);
+    background-color: slateblue;
+    font-size: 0;
+    width: 50px;
+    height: 92%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+
+    z-index: 50;
+    left: 10px;
+
+}

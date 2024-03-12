@@ -1,0 +1,15 @@
+.container {
+    position: fixed;
+    top: 400px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 80vw;
+
+    margin: auto;
+    /* 여기에 width와 height를 설정합니다. */
+}
+
+.responsiveModal {
+
+}

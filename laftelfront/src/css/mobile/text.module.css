@@ -1,0 +1,8 @@
+.multiLineEllipsis {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 표시하고 싶은 줄의 수 */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
