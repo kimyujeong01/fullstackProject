@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bitc.laf.laftelbackend.mapper.UserMapper">
+
+    <insert id="insertUser" parameterType="com.bitc.laf.laftelbackend.dto.UserDTO">
+        insert into user(id,pw,name,email,create_date,genre)
+        values(#{id},#{pw},#{name},#{email},now(), #{genre});
+    </insert>
+
+    <select id="userCheck" parameterType="String" resultType="int">
+        select count(*) cnt from user where id = #{id};
+    </select>
+
+    <select id="selectUser" resultType="com.bitc.laf.laftelbackend.dto.UserDTO" parameterType="com.bitc.laf.laftelbackend.dto.UserDTO">
+
+        SELECT * FROM user
+        where id = #{id};
+    </select>
+
+
+
+    <select id="isUserInfo" parameterType="com.bitc.laf.laftelbackend.dto.UserDTO" resultType="int">
+
+        select count(*)as cnt
+        from user
+        where id = #{id}
+        AND pw = #{pw}
+    </select>
+</mapper>

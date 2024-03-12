@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bitc.laf.laftelbackend.mapper.DetailMapper">
+
+    <select id="wishCheck" parameterType="Map" resultType="int">
+        select count(*) cnt from wish_list where user_id = #{userId} and ani_idx= #{aniIdx}
+    </select>
+
+    <delete id="wishDelete" parameterType="Map">
+        delete from wish_list where user_id = #{userId} and ani_idx = #{aniIdx}
+    </delete>
+
+    <insert id="wishInsert" parameterType="Map">
+        insert into wish_list(user_id,ani_idx,ani_title,ani_imgUrl)
+        values(#{userId},#{aniIdx},#{aniTitle},#{aniImgUrl})
+    </insert>
+
+
+    <select id="viewingCheck" parameterType="Map" resultType="int">
+        select count(*) cnt from viewing_list where user_id = #{userId} and ani_idx= #{aniIdx}
+    </select>
+
+    <delete id="viewingDelete" parameterType="Map">
+        delete from viewing_list where user_id = #{userId} and ani_idx = #{aniIdx}
+    </delete>
+
+    <insert id="viewingInsert" parameterType="Map">
+        insert into viewing_list(user_id,ani_idx,ani_title,ani_imgUrl)
+        values(#{userId},#{aniIdx},#{aniTitle},#{aniImgUrl})
+    </insert>
+
+    <select id="reviewCheck" parameterType="Map" resultType="int">
+        select count(*) cnt from review where ani_idx = #{aniIdx} and user_id = #{userId}
+    </select>
+
+    <insert id="reviewInsert" parameterType="com.bitc.laf.laftelbackend.dto.ReviewDTO">
+        insert into review(ani_idx,user_id,content,star_rating)
+        values(#{aniIdx},#{userId},#{content},#{starRating})
+    </insert>
+
+    <select id="selectAllReview" parameterType="Map" resultType="com.bitc.laf.laftelbackend.dto.ReviewDTO">
+        select * from review where ani_idx = #{aniIdx} and user_id = #{userId}
+    </select>
+
+    <update id="reviewUpdate" parameterType="com.bitc.laf.laftelbackend.dto.ReviewDTO">
+        update review
+        set content = #{content} , star_rating = #{starRating}
+        where ani_idx = #{aniIdx} and user_id = #{userId} and seq = #{seq};
+    </update>
+
+
+    <select id="AllReview" parameterType="String" resultType="com.bitc.laf.laftelbackend.dto.ReviewDTO">
+
+        select * from review where ani_idx = #{aniId};
+    </select>
+
+</mapper>

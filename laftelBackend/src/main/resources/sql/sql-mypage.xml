@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bitc.laf.laftelbackend.mapper.MypageMapper">
+
+    <select id="selectView" parameterType="String" resultType="com.bitc.laf.laftelbackend.dto.ViewingListDTO">
+        select seq,user_id,ani_idx,ani_title,ani_imgUrl from viewing_list where user_id = #{userId}
+    </select>
+
+    <!--    보고싶다-->
+    <select id="SelectMissyou" parameterType="String" resultType="com.bitc.laf.laftelbackend.dto.WishListDTO">
+        SELECT seq,user_id,ani_idx,ani_title,ani_imgUrl
+        FROM wish_list where user_id = #{userId};
+    </select>
+
+    <!--    리뷰-->
+    <select id="SelectReview" parameterType="String" resultType="com.bitc.laf.laftelbackend.dto.ReviewDTO">
+        SELECT seq,ani_idx,user_id,content,great,star_rating
+        FROM review where user_id = #{userId};
+    </select>
+
+    <delete id="DeleteReview" parameterType="Map">
+        delete from review where ani_idx = #{aniIdx} and user_id = #{userId} and seq = #{seq};
+    </delete>
+
+    <select id="SelectReviewSeq" parameterType="Map" resultType="int">
+        select seq from review where ani_idx = #{aniIdx} and user_id =#{userId};
+    </select>
+
+</mapper>
